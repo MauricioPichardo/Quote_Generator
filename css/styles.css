@@ -115,6 +115,8 @@ h1 {
   content: ", ";
   font-style: normal;
 }
+
+/* Unitilized for when year or citation aren't present */
 .hide{
   display:none;
 }

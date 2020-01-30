@@ -8,13 +8,14 @@ project 1 - A Random Quote Generator
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 
+//Array of quotes associated with war
 
 var quotes = [
     {
        author: 'Franklin D. Roosevelt',
        quote: 'The only thing we have to fear is fear itself.',
        year: '1941',
-       from:'Speech to Congress'
+       citation:'Speech to Congress'
     },
     {
        author: 'General George Patton',
@@ -24,7 +25,7 @@ var quotes = [
        author: 'Winston Churchill',
        quote: '…we shall fight on the beaches, we shall fight on the landing grounds, we shall fight in the fields and in the streets, we shall fight in the hills; we shall never surrender…',
        year: '1940',
-       from:'House of Commons'
+       citation:'House of Commons'
     },
     {
        author: 'Will Rodgers',
@@ -38,7 +39,7 @@ var quotes = [
     {
        author: 'Sun Tzu',
        quote: 'Appear weak when you are strong, and strong when you are weak.',
-       from:'Art of War'
+       citation:'Art of War'
     },
     {
        author: 'Don Delillo',
@@ -79,12 +80,16 @@ function printQuote(){
     var quotetoShow = quotes[getRandomQuote()];
     var quoteNew=quotetoShow.quote;
     var authorNew=quotetoShow.author;
-    var fromNew=quotetoShow.from;
+    var citationNew=quotetoShow.citation;
     var yearNew=quotetoShow.year;
 
-    document.querySelector("#quote-box").innerHTML="<p class='quote'>"+quoteNew+"</p>"+"<p class='source'>"+authorNew+"<span class='citation'>"+fromNew+"</span>"+"<span class='year'>"+yearNew+"</span>"+"</p>";
-    if (fromNew==undefined){
+
+// Prints String to show quote
+    document.querySelector("#quote-box").innerHTML="<p class='quote'>"+quoteNew+"</p>"+"<p class='source'>"+authorNew+"<span class='citation'>"+citationNew+"</span>"+"<span class='year'>"+yearNew+"</span>"+"</p>";
+    if (citationNew==undefined){
+      // hides citation if quote missing citation
     document.querySelector(".citation").classList.add("hide");}
+        // hides year if quote missing year
     if (yearNew==undefined){
       document.querySelector(".year").classList.add("hide");}
 
